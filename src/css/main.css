@@ -1,9 +1,10 @@
 * {
   box-sizing: border-box;
 }
-
-#q4Wrapper {
+body {
   background-color: #2A3035;
+}
+#q4Wrapper {
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -12,6 +13,7 @@
 }
 #q4Wrapper h1 {
   font-size: 48px;
+  text-transform: capitalize;
 }
 #q4Wrapper h3 {
   font-size: 14px;
@@ -33,6 +35,7 @@
   text-align: center;
 }
 #q4Wrapper article img {
+  width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 #q4Wrapper a {
@@ -42,13 +45,14 @@
   transition: transform 0.3s ease;
 }
 #q4Wrapper a:hover {
-  transform: scale(1.05);
+  transform: scale(1.05, 1.05);
 }
 #q4Wrapper a span {
   opacity: 0.5;
 }
 
-.layout_inner {
+/* Layout section */ 
+.layout {
   max-width: 960px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -56,9 +60,25 @@
 .layout_header {
   margin-bottom: 30px;
   text-align: center;
+  background-color: #23272A;
+  padding: 20px;
 }
-
 /* Begin styling the report items here! */
 .reports {
+  display: flex;
+  flex-flow: wrap;
+  margin:0 0 0 -30px;
+}
 
+.reports_item {
+  width: calc(100%/3 - 30px);
+  flex-grow: 0;
+  text-align: center;
+  margin: 0 0 30px 30px
+}
+
+@media (max-width: 768px) {
+  .reports_item {
+    width: calc(100%/2 - 30px);
+  }
 }
